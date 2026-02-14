@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
 	<meta charset="UTF-8" />
@@ -35,7 +35,14 @@
 			<button class="btn-copy" onclick="copyJson(true)">🗜️ 压缩复制</button>
 		</div>
 		<pre id="jsonOutput">点击“生成 JSON”查看结果</pre>
+		<div class="java-hint">
+			💡 提示：可使用以下 Java 代码（Jackson）将 JSON 转为 TreeNode 对象：
+			<code>
+	TreeNode root = new ObjectMapper().readValue(jsonTree, TreeNode.class);
+		</code>
+		</div>
 	</div>
 </body>
-<script src="./binary-tree.js" ></script>
+<script src="./binary-tree.js"></script>
+
 </html>
