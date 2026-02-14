@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>可交互二叉树构建器（子树联动 + 双击编辑）</title>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+	<div class="header-container">
+		<h2>可视化二叉树构建器（支持子树联动 & 双击编辑）</h2>
+		<p>• 单击选中节点（蓝色高亮）• 双击任意节点可编辑值<br></p>
+	</div>
+	<!-- <canvas id="binaryTreeCanvas" width="900" height="700"></canvas> -->
+	<!-- 替换原来的 <canvas> 行 -->
+	<div class="panel">
+		<div class="panel-header">可视化二叉树</div>
+		<div class="panel-content" id="canvasContainer">
+			<canvas id="binaryTreeCanvas" width="900" height="600"></canvas>
+			<input type="text" id="inlineEditor" />
+		</div>
+	</div>
+
+	<div class="controls">
+		<button onclick="addLeftNode()">添加左子节点</button>
+		<button onclick="addRightNode()">添加右子节点</button>
+		<input type="text" id="nodeValueInput" placeholder="新节点值" value="New" />
+		<button onclick="deleteSelectedNode()">删除节点</button>
+		<button onclick="generateJson()">生成 JSON</button>
+	</div>
+	<div class="json-area">
+		<div class="json-buttons">
+			<button class="btn-copy" onclick="copyJson(false)">📋 复制（格式化）</button>
+			<button class="btn-copy" onclick="copyJson(true)">🗜️ 压缩复制</button>
+		</div>
+		<pre id="jsonOutput">点击“生成 JSON”查看结果</pre>
+	</div>
+</body>
+<script src="./binary-tree.js" ></script>
+</html>
